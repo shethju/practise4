@@ -4,7 +4,7 @@ public class MaxInSubArray {
 	public static void main(String args[]) {
 		int A[] = {-2,1,-3,4,-1,2,1,-5,4};
 		maxSubArray(A);
-		System.out.println("done");
+		System.out.println("done2");
 	}
 
 	public static int maxSubArray(int[] A) {
