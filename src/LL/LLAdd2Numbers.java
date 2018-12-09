@@ -16,7 +16,7 @@ Explanation: 342 + 465 = 807.
 public class LLAdd2Numbers {
 	
 	public static ListNodeLong addTwoNumbers(ListNodeLong l1, ListNodeLong l2) {
-		long num1 = getNumber(l1);
+		long num1 = getNumber(l1); // converted everything to Long since int add were causing overflow
         long num2 = getNumber(l2);
         long sum = num1 + num2;
         ListNodeLong result = getListNodeLong(sum);
@@ -27,7 +27,7 @@ public class LLAdd2Numbers {
 		long result = 0;
 		int i=0;
 		while (l != null) {
-			result = (long) (result + (l.val * (double)Math.pow(10, i)));
+			result = (long) (result + (l.val * (double)Math.pow(10, i))); // l.val
 			i++;
 			l = l.next;
 		}
@@ -38,7 +38,7 @@ public class LLAdd2Numbers {
 		int i = 1;
 		int divisor = 10;
 		ListNodeLong head = null;
-		ListNodeLong result = null;
+		ListNodeLong result = null; // Need this to save head
 		while (sum/divisor > 0) {
 			if (head == null) {
 				head = new ListNodeLong(sum % divisor);
