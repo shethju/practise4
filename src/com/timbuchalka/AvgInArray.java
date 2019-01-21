@@ -8,7 +8,9 @@ public class AvgInArray {
     private static int[] baseData = new int[10];
 
     public static void main(String[] args) {
-        System.out.println("Enter 10 integers:");
+        String s = "abc";
+        s.length();
+    		System.out.println("Enter 10 integers:");
         getInput();
         printArray(baseData);
         resizeArray();
@@ -17,7 +19,11 @@ public class AvgInArray {
 //        baseData[10] = 67;
 //        baseData[11] = 34;
         printArray(baseData);
-
+        Abc a = new Abc();
+    }
+    
+    private void what() {
+    		Abc a = new Abc();
     }
 
     private static void getInput()
@@ -40,6 +46,10 @@ public class AvgInArray {
         baseData = new int[12];
         for (int i = 0; i < original.length; i++)
             baseData[i] = original[i];
+    }
+    
+    private class Abc {
+    		public Abc() {}
     }
 
 }
