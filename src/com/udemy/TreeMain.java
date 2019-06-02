@@ -13,6 +13,11 @@ public class TreeMain {
 		t.add(30);
 		t.add(25);
 		t.printTree();
+		System.out.println("---------");
+		System.out.println(t.lookup(10));
+		System.out.println(t.lookup(8));
+		System.out.println(t.lookup(25));
+		System.out.println(t.lookup(100));
 	}
 
 }

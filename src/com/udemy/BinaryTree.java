@@ -26,7 +26,16 @@ public class BinaryTree {
 				}
 			}
 		}
-		
+	}
+	
+	public TreeNode lookup(int value) {
+		TreeNode tmp = root;
+		while (tmp != null) {
+			if (tmp.val == value) return tmp;
+			if (value < tmp.val) tmp = tmp.left;
+			else tmp = tmp.right;
+		}
+		return null;
 	}
 	
 	public void printTree() {
@@ -35,7 +44,7 @@ public class BinaryTree {
 	
 	public void traversePreOrder(TreeNode node) {
 		if (node == null) return;
-		System.out.println(node.val);
+		System.out.println(node);
 		traversePreOrder(node.left);
 		traversePreOrder(node.right);
 	}
