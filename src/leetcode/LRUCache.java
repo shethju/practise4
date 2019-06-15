@@ -62,7 +62,7 @@ class DLL { // doubly linked list
 		head.previous = n;
 		n.next = head;
 		n.previous = null;
-		head = head.previous;
+		head = n;
 	}
 	
 	void remove(DNode n) {
@@ -95,7 +95,7 @@ class DLL { // doubly linked list
 		DNode temp = this.tail;
 		//tail = tail.previous;
 		remove(temp);
-		size--;
+		//size--;
 		return temp;
 	}
 	
