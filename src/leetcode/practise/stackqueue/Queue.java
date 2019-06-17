@@ -1,4 +1,4 @@
-package leetcode.practise.ll;
+package leetcode.practise.stackqueue;
 
 import java.util.concurrent.PriorityBlockingQueue;
 
