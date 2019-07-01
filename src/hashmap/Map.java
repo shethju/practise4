@@ -23,7 +23,7 @@ public class Map<K,V> {
 		numBuckets = 10;
 		size = 0;
 		for (int i=0; i < numBuckets; i++) {
-			bucket.add(null);
+			bucket.add(null); // without initialization bucket is just empty
 		}
 	}
 
