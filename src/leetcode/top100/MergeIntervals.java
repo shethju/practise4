@@ -1,9 +1,9 @@
-package leetcode.practise.interviews;
+package leetcode.top100;
 
 import java.io.*;
 import java.util.*;
 
-import leetcode.practise.interviews.MergeIntervalsArrays.Interval;
+import leetcode.top100.MergeIntervalsArrays.Interval;
 
 /*
  * To execute Java, please define "static void main" on a class

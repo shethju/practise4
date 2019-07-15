@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.top100;
 
 import java.io.*;
 import java.util.*;

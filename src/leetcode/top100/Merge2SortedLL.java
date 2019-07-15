@@ -1,7 +1,9 @@
-package LL;
+package leetcode.top100;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+
+
 
 /* -----------------------------------
  *  WARNING:
@@ -16,12 +18,20 @@ import java.io.InputStreamReader;
 
 /**
  * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
+ */ 
+class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) { val = x; }
+ }
+ 
+/*
+Create a dummy head pointer called dummy. 
+Initialize head to dummy.
+Move dummy throughout the code
+Check for condition when l1 is null and l2 is not null and vice versa at end of loop
+Check for l1/l2/both null at starting of loop
+*/
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if ((l1 == null) && (l2 == null)) return null;
