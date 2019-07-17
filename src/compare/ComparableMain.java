@@ -13,7 +13,7 @@ class ComparableMain {
 		list.add(new Laptop("c", 1, 10));
 		list.add(new Laptop("b", 2, 20));
 		list.add(new Laptop("a", 3, 30));
-		Collections.sort(list); // Note sort default is ascending order
+		Collections.sort(list); // Note sort default is ascending order. Note Laptop already implements Comparable interface
 		for (Laptop l : list) {
 			System.out.println(l.getBrand());
 		}
@@ -26,7 +26,8 @@ class ComparableMain {
 				} else return 0;
 			}
 		}; // note semi colon. 
-		Collections.sort(list, com); // Note sort default is ascending order
+		Collections.sort(list, com); // Note sort default is ascending order. Note now we are using customer comparator
+		//and not inbuild compararison .
 		for (Laptop l : list) {
 			System.out.println(l.getPrice());
 		}
