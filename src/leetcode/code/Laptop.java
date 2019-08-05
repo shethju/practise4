@@ -1,4 +1,4 @@
-package compare;
+package leetcode.code;
 
 public class Laptop implements Comparable<Laptop>{
 	private String brand;

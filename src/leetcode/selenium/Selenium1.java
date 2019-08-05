@@ -15,13 +15,23 @@ public class Selenium1 {
 		//WebDriver driver = new ChromeDriver();
     	
         //String baseUrl = "http://demo.guru99.com/test/newtours/";
-		String baseUrl = "https://www.loopcommerce.com";
+		//String baseUrl = "https://www.loopcommerce.com";
+		String baseUrl1 = "http://demo.guru99.com/test/facebook.html";
 		String expectedTitle = "Loop Commerce - Perfect Gifting";
         String actualTitle = "";
 
         // launch Fire fox and direct it to the Base URL
-        driver.get(baseUrl);
-
+        driver.get(baseUrl1);
+        driver.findElement(By.xpath("//*[@id=\"email\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("hello");
+        driver.findElement(By.cssSelector("input#email.inputtext")).click();
+        driver.findElement(By.cssSelector("input#email.inputtext")).sendKeys("12");
+        driver.findElement(By.name("email")).click();
+        driver.findElement(By.name("email")).sendKeys("34");
+        driver.findElement(By.cssSelector("input#email.inputtext")).sendKeys("12");
+        driver.findElement(By.cssSelector("input#pass.inputtext")).click();
+        driver.findElement(By.cssSelector("input#pass.inputtext")).sendKeys("how");
+        //driver.findElement(By.className("")
         // get the actual value of the title
         actualTitle = driver.getTitle();
         System.out.println(driver.findElement(By.id("linkedin-pixel")).getTagName());
@@ -35,6 +45,7 @@ public class Selenium1 {
             System.out.println("Test Failed");
         }
         Assert.assertEquals("msg", expectedTitle, actualTitle);
+        //Assert.
         //close Fire fox
         driver.close();
        

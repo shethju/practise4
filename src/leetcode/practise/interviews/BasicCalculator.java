@@ -2,8 +2,11 @@ package leetcode.practise.interviews;
 // https://leetcode.com/problems/basic-calculator-ii/  
 	
 public class BasicCalculator {
+	public static void main(String args[]) {
+		System.out.print(calculate("5-3"));
+	}
 
-	public int calculate(String s) {
+	public static int calculate(String s) {
         int N = s.length();
         char sign = '+';
         int pre = 0;

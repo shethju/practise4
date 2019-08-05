@@ -1,5 +1,7 @@
 package leetcode.top100;
 
+import java.util.PriorityQueue;
+
 // Solution: https://leetcode.com/problems/k-closest-points-to-origin/discuss/220235/Java-Three-solutions-to-this-classical-K-th-problem 
 // 
 public class KLargestElementInArray {
@@ -10,8 +12,16 @@ public class KLargestElementInArray {
 		
 	}
 	
-	public int getKthLargest(int[] num, int k) {
-		PriorityQueue<Integer> heap = new PriorityQueue<Integer> ((i1, i2) -> i1 -i2);
-	}
+	public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        for(int num : nums)
+        {
+            pq.add(num);
+            if(pq.size()>k)
+                pq.poll();
+        }   
+        return pq.poll();
+    }
 
 }

@@ -85,11 +85,11 @@ public class PascalsTriangle {
     triangle.add(new ArrayList<Integer>());
     triangle.get(0).add(1);
    
-    for (int rowNums = 1; rowNums < numRows; rowNums++) {
+    for (int i = 1; i < numRows; i++) {
       List<Integer> row = new ArrayList<Integer>();
-      List<Integer> prev = triangle.get(rowNums - 1);
+      List<Integer> prev = triangle.get(i - 1);
       row.add(1);
-      for (int j=1; j < rowNums; j++) {
+      for (int j=1; j < i; j++) {
         row.add(prev.get(j-1) + prev.get(j));
       }
       row.add(1);

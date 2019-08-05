@@ -1,4 +1,4 @@
-package compare;
+package leetcode.code;
 
 import java.util.ArrayList;
 import java.util.Collections;

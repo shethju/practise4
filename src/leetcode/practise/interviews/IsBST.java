@@ -1,14 +1,16 @@
 package leetcode.practise.interviews;
 
+import com.udemy.TreeNode;
+
 public class IsBST {
 	///// but if we pass the tree node instead of passing the value, we can avoid creating 2 long copies for each function call(because passing long is passing by copy).
 
     /// Also, we can avoid even using long by doing that.
 	public boolean isValidBST(TreeNode root) {
-        return helper(root, null, null);
+        return helper21(root, null, null);
     }
     
-    private boolean helper(TreeNode root, TreeNode min, TreeNode max) {
+    private boolean helper21(TreeNode root, TreeNode min, TreeNode max) {
         if (root == null) return true;
         if ((min != null && root.val <= min.val) || (max != null && root.val >= max.val)) return false; // equal to needed
         return helper(root.left, min, root) && helper(root.right, root, max);
@@ -16,11 +18,11 @@ public class IsBST {
     /////
 	
 	///////////
-	public boolean isValidBST(TreeNode root) {
-        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+	public boolean isValidBST29(TreeNode root) {
+        return isValidBST29(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
     
-    public boolean isValidBST(TreeNode root, long minVal, long maxVal) {
+    public boolean isValidBST29(TreeNode root, long minVal, long maxVal) {
         if (root == null) return true;
         if (root.val >= maxVal || root.val <= minVal) return false;
         return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
