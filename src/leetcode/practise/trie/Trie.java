@@ -5,7 +5,8 @@ import java.util.HashMap;
 public class Trie {
 	
 	class TrieNode {
-		HashMap<Character, TrieNode> children;
+		// map can have multiple key value pairs, hence if a node has multiple children we can add them to children variable
+		HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>(); 
 		boolean isWordComplete;
 	}
 	

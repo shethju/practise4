@@ -1,6 +1,6 @@
 package leetcode.restassured;
 
-package TestFramework;
+
 import java.io.FileInputStream;
 
 import java.io.IOException;

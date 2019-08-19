@@ -15,7 +15,7 @@ public class NumOfIslands {
         int columns = grid[0].length;
         for (int i=0; i < rows; i++) {
         		for (int j=0; j < columns; j++) {
-        			if (grid[i][j] == '1') {
+        			if (grid[i][j] == '1') { // mark all surrounding 1 to 0 since they belong to same island
         				dfs(grid, i, j);
         				++count;
         			}
@@ -28,7 +28,8 @@ public class NumOfIslands {
 		int numcolumns = grid[0].length - 1;
         int numrows = grid.length -1;
         if (row < 0 || row > numrows || column < 0 || column > numcolumns || grid[row][column] != '1') return;
-        grid[row][column] = 0;
+        grid[row][column] = 0; // mark the same element to 0 so we dont recount the island. Note it is same element
+        // as in the if condition in numIslands(). It is also the same element we send in recursive call below.
         dfs(grid, row -1, column);
         dfs(grid, row +1, column);
         dfs(grid, row, column - 1);

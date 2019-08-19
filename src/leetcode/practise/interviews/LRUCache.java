@@ -91,7 +91,7 @@ class DLL { // doubly linked list
 		n.next.previous = n.previous;
 	}
 	
-	DNode removeTail() {
+	DNode removeTail() { // returns DNode since need to remove it from Map
 		DNode temp = this.tail;
 		//tail = tail.previous;
 		remove(temp);
