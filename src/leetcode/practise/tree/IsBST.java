@@ -16,7 +16,7 @@ public class IsBST {
     /////
 	
 	///////////
-	public boolean isValidBST(TreeNode root) {
+	public boolean isValidBST4(TreeNode root) {
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
     

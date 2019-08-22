@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class MyQueueUsingStack {
 	/** Initialize your data structure here. */
-	Stack<Integer> input = new Stack();
-    Stack<Integer> output = new Stack();
+	Stack<Integer> input = new Stack<>();
+    Stack<Integer> output = new Stack<>();
     public MyQueueUsingStack() {
         
     }

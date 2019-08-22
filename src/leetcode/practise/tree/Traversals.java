@@ -17,7 +17,7 @@ public class Traversals {
 	
 	private void preorderTraversal(TreeNode root, List<Integer> list) {
 		if (root == null) {
-			return;
+			return; // list is by reference hence return type is void
 		}
 		list.add(root.val);
 		preorderTraversal(root.left, list);

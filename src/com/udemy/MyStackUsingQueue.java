@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class MyStackUsingQueue {
+	// Note Queue is DS in java. Queue.remove() is from index 0, fifo
+	// Queue.add is to end of list
 	private Queue<Integer> queue = new LinkedList<>();
 
     public void push(int x) {

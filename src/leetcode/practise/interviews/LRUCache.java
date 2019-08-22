@@ -68,7 +68,7 @@ class DLL { // doubly linked list
 	void remove(DNode n) {
 		if (n == null) return;
 		size--;
-		// 1 node
+		// Only 1 node in list
 		if (n.previous == null && n.next == null) {
 			head = null;
 			tail = null;
