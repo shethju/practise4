@@ -47,7 +47,10 @@ public class MedianOfSortedArrays {
 
 	
 	public double findMedianSortedArraysFromLeetCode(int[] nums1, int[] nums2) {
-	    // In statistics, the median is used for dividing a set into two equal length subsets, that one subset is always greater than the other there are two array, we seperated them into two part, it is left_part and right_part. If we found the value in left_part <= right_part, then we can find the answer. So we need find i, j, which satisfied (1)A[i-1] < B[j] && B[j-1] < A[i(2)len(left_part) == len(right_part).                               
+	    // In statistics, the median is used for dividing a set into two equal length subsets, 
+		//that one subset is always greater than the other there are two array, we seperated them into two part, 
+		// it is left_part and right_part. If we found the value in left_part <= right_part, then we can find the answer. 
+		// So we need find i, j, which satisfied (1)A[i-1] < B[j] && B[j-1] < A[i] (2)len(left_part) == len(right_part).                               
 	 //For(1) Median=(max(left_part)+min(right_part))/2. 
 	 //For(2)  i + j == m-i+n-j => i + j = (m+n) / 2     (or: i + j == m-i+n-j+1 => j = (m+n+1)/2 - i)
 	    

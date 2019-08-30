@@ -17,6 +17,7 @@ public class RomanToInt {
         int length = s.length();
         for (int i=0; i < length;) {
             int tmpValue = map.get(s.charAt(i));
+            // look for characters in set followed by set2
             if (set.contains(s.charAt(i)) && (i+1 < length) && (set2.contains(s.substring(i, i+2)))) {
                 count = count + map.get(s.charAt(i + 1)) - tmpValue;
                 i = i + 2;
@@ -30,6 +31,7 @@ public class RomanToInt {
     }
 
     private static void initMap() {
+    	// general mapping of all characters
         map.put('I',1);
         map.put('V',5);
         map.put('X',10);
@@ -38,6 +40,8 @@ public class RomanToInt {
         map.put('D',500);
         map.put('M',1000);
 
+        // set  and set2 are to be used in conjuction. We first check if character in set and then check
+        // if next character is in set2, if yes then do val(i+1) - val(i) character i.e. 5-1=4 i.e. IV
         set.add('I');
         set.add('X');
         set.add('C');
