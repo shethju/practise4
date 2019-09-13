@@ -1,10 +1,15 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 
 
 
 	
-	import java.io.*;
-	import java.util.*;
+	import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 	/*
 	You are a developer for a university. Your current project is to develop a system for students to find courses they share with friends. The university has a system for querying courses students are enrolled in, returned as a list of (ID, course) pairs.
@@ -60,7 +65,7 @@ package leetcode.practise.interviews;
 
 	 */
 
-	class StudentCoursesCommon {
+	class StudentCoursesCommon2 {
 	  public static void main(String[] args) {
 	    String[][] studentCoursePairs1 = {
 	      {"58", "Software Design"},
@@ -83,10 +88,10 @@ package leetcode.practise.interviews;
 	    };
 	    
 	    // TODO: Call your function and print your results
-	    Map<StudentPair, List<String>> result = findCourses(studentCoursePairs1);
-	    for (Map.Entry<StudentPair, List<String>> entry : result.entrySet()) {
+	    Map<StudentPair, Set<String>> result = findCourses(studentCoursePairs1);
+	    for (Map.Entry<StudentPair, Set<String>> entry : result.entrySet()) {
 	    		StudentPair key = entry.getKey();
-	    		List<String> values = entry.getValue();
+	    		Set<String> values = entry.getValue();
 	    		System.out.println("[" + key.student1 + "," + key.student2);
 	    		System.out.print(" -> ");
 	    		for (String s : values) {
@@ -104,37 +109,22 @@ package leetcode.practise.interviews;
 		  
 	  
 	  // TODO: Write a function that takes a list of pairs and returns a data structure containing the list of all pairs of students and their common classes
-	  private static Map<StudentPair, List<String>> findCourses(String[][] pairs) {
-		  Map<StudentPair, List<String>> result = new HashMap<>();
+	  private static Map<StudentPair, Set<String>> findCourses(String[][] pairs) {
+		Map<StudentPair, Set<String>> result = new HashMap<>();
 	    HashMap<String, Set<String>> map = getPairs(pairs);
-	    Set<String> keys = getKeys(pairs);
-	    List<String> arr = new ArrayList<>(keys);
-	    for (int i=0; i < keys.size() - 1; i++) {
-	    		for (int j=i+1; j < keys.size(); j++) {
-	    			//result.put(new StudentPair(arr.get(i), arr.get(j)), new ArrayList<>());
+	    List<String> listids = new ArrayList<String>(map.keySet());
+	    int length = listids.size();
+	    for (int i=0; i < length-1; i++) {
+	    		for (int j=i+1; j < length; j++) {
+	    			String id1 = listids.get(i);
+	    			String id2 = listids.get(j);
+	    			StudentPair p = new StudentPair(id1, id2);
+	    			Set<String> subject1 = map.get(id1);
+	    			Set<String> subject2 = map.get(id2);
+	    			Set<String> common = new HashSet<>(subject1); // deep copy is needed
+	    			common.retainAll(subject2);
+	    			result.put(p, common);
 	    		}
-	    }
-	    // got over vales and create the map
-	    for (Map.Entry<String, Set<String>> entry: map.entrySet()) {
-	      String key = entry.getKey();
-	      String[] values = entry.getValue().toArray(new String[0]);
-	      int length = values.length;
-	      for (int i=0; i < length-1; i++) {
-	    	  	for (int j=i+1; j < length; j++) {
-	    	  		StudentPair pair = new StudentPair(values[i], values[j]);
-	    	  		System.out.println("student pair" + values[i] + "," + values[j] + ", hashcode=" + pair.hashcode());
-	    	  		List<String> subjects = result.get(pair);
-	    	  		System.out.println("before " + subjects);
-	    	  		if (subjects == null) subjects = new ArrayList<String>();
-	    	  		subjects.add(key);
-	    	  		System.out.println("after " + subjects);
-	    	  		System.out.println("before add" + result.size());
-	    	  		result.put(pair, subjects);
-	    	  		System.out.println("after2 " + result.get(pair));
-	    	  		System.out.println("after add" + result.size());
-	    	  	}
-	      }
-	      
 	    }
 	    System.out.println("***");
 	    System.out.println(result);
@@ -150,31 +140,56 @@ package leetcode.practise.interviews;
 		    return keys;
 	  }
 	  
-	  // key is subject
+	  // key is id
 	  private static HashMap<String, Set<String>> getPairs(String[][] pairs) {
-	    HashMap<String, Set<String>> map = new HashMap<>();
-	    int length = pairs.length;
-	    for (int i=0; i < length; i++) {
-	      Set<String> set = map.get(pairs[i][1]);
-	      if (set == null) {
-	        set = new TreeSet<String>();
-	        set.add(pairs[i][0]);
-	        map.put(pairs[i][1], set);
-	      } else {
-	        set.add(pairs[i][0]);
-	        map.put(pairs[i][1], set);
-	      }
-	    }
-	    System.out.println(map);
-	    return map;
-	  }
+		    HashMap<String, Set<String>> map = new HashMap<>();
+		    int length = pairs.length;
+		    for (int i=0; i < length; i++) {
+		      Set<String> set = map.get(pairs[i][0]);
+		      if (set == null) {
+		        set = new TreeSet<String>();
+		        set.add(pairs[i][1]);
+		        map.put(pairs[i][0], set);
+		      } else {
+		        set.add(pairs[i][1]);
+		        map.put(pairs[i][0], set);
+		      }
+		    }
+		    System.out.println(map);
+		    return map;
+		  }
+
 	  
 	  
 	  
 	}
 
-	// {"1,2","c1", "c2"}
+	class StudentPair {
+		  String student1;
+		  String student2;
+		  public StudentPair(String student1, String student2) {
+			  this.student1 = student1;
+	    		  this.student2 = student2;
+		  }
+		  /*
+		  public boolean equals(Object o) {
+			  if (this == o) return true;
+			  if (!(o instanceof StudentPair)) return false;
+			  StudentPair s = (StudentPair)o;
+			  if ((this.student1.equals(s.student1) && this.student2.equals(s.student2)) || 
+					  (this.student1.equals(s.student2) && this.student1.equals(s.student2))) {
+				  return true;
+			  }
+			  return false;
+		  }
+		  
+		  public int hashcode() {
+			  int result = 1;
+			  result = 31 * result + ((student1 != null) ? student1.hashCode() : 0);
+			  result = 31 * result + ((student2 != null) ? student2.hashCode() : 0);
+			  return result;
+		  }*/
+	  }
 		  
 		  
 		  
-

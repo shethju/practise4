@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 
 class MergeKSortedArrays {
     public ListNode mergeKLists(ListNode[] lists) {

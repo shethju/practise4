@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 
 // https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!
 public class IntersectionOf2LinkedList {

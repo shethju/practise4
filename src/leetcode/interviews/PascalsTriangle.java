@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 
 /* Problem Name is &&& Pascals Triangle &&& PLEASE DO NOT REMOVE THIS LINE. */
 

@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 // https://leetcode.com/problems/basic-calculator-ii/  
 	
 public class BasicCalculator {

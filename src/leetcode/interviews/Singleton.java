@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 
 // https://www.youtube.com/watch?v=zUYLY8kYavs
 public class Singleton {

@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 
 import java.util.HashMap;
 import java.util.HashSet;

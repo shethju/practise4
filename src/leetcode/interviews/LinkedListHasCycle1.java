@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 
 // https://leetcode.com/problems/linked-list-cycle/solution/
 // Note that the cycle can be from any random node in ll not necessary the 1st node

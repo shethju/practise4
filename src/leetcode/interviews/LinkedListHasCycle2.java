@@ -1,4 +1,4 @@
-package leetcode.practise.interviews;
+package leetcode.interviews;
 
 // https://leetcode.com/problems/linked-list-cycle-ii/solution/
 public class LinkedListHasCycle2 {
