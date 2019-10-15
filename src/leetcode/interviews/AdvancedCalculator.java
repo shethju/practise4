@@ -4,8 +4,11 @@ import java.util.Stack;
 
 // https://leetcode.com/problems/basic-calculator/solution/
 class AdvancedCalculator {
+	public static void main(String args[]) {
+		System.out.println(new AdvancedCalculator().calculate("5+5*2"));
+	}
 
-    public int evaluateExpr(Stack<Object> stack) {
+	public int evaluateExpr(Stack<Object> stack) {
 
         int res = 0;
 
