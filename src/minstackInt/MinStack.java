@@ -3,9 +3,9 @@ package minstackInt;
 class MinStack {
 	Node tos;
 
-    MinStack() {
+    /*MinStack() {
         tos = null;
-    }
+    }*/
 
     //public MinStack() {}
 	
